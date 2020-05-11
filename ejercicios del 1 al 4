@@ -1,0 +1,61 @@
+//--------------------------- ejercicios javascript del 1 al 4 --------------------------------
+
+/*  1) Programa una función que cuente el número de caracteres de una cadena de texto, pe.miFuncion("Hola Mundo") devolverá 10. */
+const counter = (words = "") => {
+  if (words == "") {
+    console.log("No ingresaste una cadena de texto");
+  } else {
+    console.log(`Tu cadena mide ${words.length} caracteres de largo`);
+  }
+};
+
+counter('Hola Mundo');
+
+/*2) Programa una función que te devuelva el texto recortado según el número de caracteres indicados, pe.miFuncion("Hola Mundo", 4) devolverá "Hola". */
+const sliceFunction = (words2 = "", counter2 = undefined) => {
+  let number = words2.slice(0, counter2);
+  return (!words2)
+    ? console.warn("No ingresaste una cadena de texto")
+    : counter2 === undefined
+    ? console.warn("No ingresaste la longitud para recortar el texto")
+    : console.log(
+        `Soy el '${number}' de '${words2}' y tengo ${number.length} caracteres`
+      );
+};
+sliceFunction()
+sliceFunction("",4)
+sliceFunction("Hola hola")
+sliceFunction("Hola mundo")
+sliceFunction("Hola mundo", 4)
+
+/* 3) Programa una función que dada una String te devuelva un Array de textos separados por cierto caracter, pe.miFuncion('hola que tal', ' ') devolverá['hola', 'que', 'tal']. */
+const converterToArray = (textToSplit = "", splitter = undefined) =>
+  (!textToSplit)
+    ? console.warn("No ingresaste una cadena de texto")
+    : splitter === undefined
+    ? console.warn("No indicaste el separador")
+    : console.log(textToSplit.split(splitter));
+
+converterToArray("", " ")
+converterToArray("Hola que tal")
+converterToArray("Hola que tal", " ")
+
+/* 4) Programa una función que repita un texto X veces, pe.miFuncion('Hola Mundo', 3) devolverá Hola Mundo Hola Mundo Hola Mundo. */
+const textToLooping = (text = "", looping = undefined) => {
+  if (!text) return console.warn("No ingresaste una cadena de texto");
+  if (looping === undefined) return console.warn("no expecificaste la cantidad de repeticiones");
+  if (looping === 0) return console.warn("el numero de repeticiones no puede ser cero");
+  if (Math.sign(looping) === -1) return console.error("El numero de repeticiones no puede ser negativo");
+  
+  
+
+  for (let i = 1; i <= looping; i++) {
+    console.log(`${text}, ${i} `)
+  }
+}
+textToLooping("Hola mundo", 3)
+textToLooping()
+textToLooping("",3);
+textToLooping("Hola mundo")
+textToLooping("Hola mundo",-3);
+textToLooping("Hola mundo", 0);
